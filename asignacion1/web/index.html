@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Asignacion 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-color: #a473fe">
+        <div>
+            <h1>Bienvenidos</h1>
+            <div>
+                <img src="img/images.png" alt=""/>
+                <p>Esta landing page esta dedicada para la materia de Aplicaciones Moviles.
+                    Mi nombre es Jesus Alberto Cossio Rodriguez soy estudiante de ISW
+                </p>
+            </div>
+            <div>
+                <h2>Hobbies</h2>
+                <p>Mis hobbies son jugar videojuegos, escuchar musica y ver anime o serie de vez en
+                    cuando
+                </p>
+            </div>
+            <div>
+                <h2>Series Favoritas</h2>
+                <p>Mi serie favorita es The Office, la he visto mas de una vez y siempre que decido
+                    volver a verla siempre me hace reir. Y la otra no es serie si no un anime que me
+                    encanta es One Piece que es parte importante de mi vida y no me canso de verlo.
+                </p>
+            </div>
+            <div>
+                <form onsubmit="sendMail(event)">
+                    <label>Nombre:</label><input type="text" name="nombre" id="nombre" /> <br>
+                    <label>Numero de Telefono:</label><input type="text" name=" numero" id="numero"/> <br>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <script>
+                function sendMail(event) {
+                    event.preventDefault();
+
+                    const nombre = document.getElementById('nombre').value;
+                    const numero = document.getElementById('numero').value;
+
+                    const subject = encodeURIComponent('Contacto');
+                    const body = encodeURIComponent(`Nombre: ${nombre}\nNumero: ${numero}\n`);
+
+                    window.location.href = `mailto:jesus.cossio204050@potros.itson.edu.mx?subject=${subject}&body=${body}`;
+                }
+            </script>
+        </div>  
+    </body>
+</html>
